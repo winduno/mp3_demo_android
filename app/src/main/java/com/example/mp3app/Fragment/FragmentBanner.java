@@ -11,13 +11,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mp3app.R;
 
-public class Fragment_search extends Fragment {
+public class FragmentBanner extends Fragment {
+
     View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_search, container, false);
+        view = inflater.inflate(R.layout.fragment_banner, container, false);
         return view;
     }
 }

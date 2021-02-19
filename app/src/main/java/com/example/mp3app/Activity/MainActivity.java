@@ -9,8 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.mp3app.Adapter.MainViewPagerAdapter;
-import com.example.mp3app.Fragment.Fragment_home;
-import com.example.mp3app.Fragment.Fragment_search;
+import com.example.mp3app.Fragment.FragmentHome;
+import com.example.mp3app.Fragment.FragmentSearch;
 import com.example.mp3app.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
-        mainViewPagerAdapter.addFragment(new Fragment_home(), "Home");
-        mainViewPagerAdapter.addFragment(new Fragment_search(), "Search");
+        mainViewPagerAdapter.addFragment(new FragmentHome(), "Home");
+        mainViewPagerAdapter.addFragment(new FragmentSearch(), "Search");
         viewPager.setAdapter(mainViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.icontrangchu);

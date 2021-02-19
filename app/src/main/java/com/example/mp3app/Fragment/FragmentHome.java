@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mp3app.R;
 
-public class Fragment_home extends Fragment {
+public class FragmentHome extends Fragment {
 
     View view;
 
