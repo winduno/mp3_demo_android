@@ -17,7 +17,7 @@ private String name;
 private String backGround;
 @SerializedName("icon")
 @Expose
-private Object icon;
+private String icon;
 @SerializedName("songs")
 @Expose
 private List<Song> songs = null;
@@ -46,11 +46,11 @@ public void setBackGround(String backGround) {
 this.backGround = backGround;
 }
 
-public Object getIcon() {
+public String getIcon() {
 return icon;
 }
 
-public void setIcon(Object icon) {
+public void setIcon(String icon) {
 this.icon = icon;
 }
 

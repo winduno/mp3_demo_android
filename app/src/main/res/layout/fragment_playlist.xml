@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
     <TextView
         android:textColor="#3e3b3b"
         android:textSize="30sp"
         android:gravity="center"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+
         android:id="@+id/textviewTitlePlaylist"
         android:text="Giữ ở đây để test nhé!!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <ListView
+        android:layout_marginTop="15dp"
         android:layout_below="@id/textviewTitlePlaylist"
         android:id="@+id/listViewPlaylist"
         android:layout_width="match_parent"
