@@ -3,7 +3,7 @@ package com.example.mp3app.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Types {
+public class Type {
 
     @SerializedName("typeId")
     @Expose

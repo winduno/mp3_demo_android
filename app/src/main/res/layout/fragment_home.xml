@@ -19,6 +19,16 @@
             android:id="@+id/fragmentplaylist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <fragment
+            android:name="com.example.mp3app.Fragment.FragmentType"
+            android:id="@+id/fragmenttype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <fragment
+            android:name="com.example.mp3app.Fragment.FragmentAlbum"
+            android:id="@+id/fragmentalbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </ScrollView>

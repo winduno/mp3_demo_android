@@ -25,7 +25,7 @@ public class Song {
     private Album album;
     @SerializedName("types")
     @Expose
-    private Types types;
+    private Type type;
 
     public Integer getId() {
         return id;
@@ -75,12 +75,12 @@ public class Song {
         this.album = album;
     }
 
-    public Types getTypes() {
-        return types;
+    public Type getType() {
+        return type;
     }
 
-    public void setTypes(Types types) {
-        this.types = types;
+    public void setType(Type type) {
+        this.type = type;
     }
 
 }
