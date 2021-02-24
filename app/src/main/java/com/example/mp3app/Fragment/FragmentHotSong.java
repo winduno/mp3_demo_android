@@ -25,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FragmentSongByLike extends Fragment {
+public class FragmentHotSong extends Fragment {
 
     View view;
     ArrayList<Song> songArrayList;

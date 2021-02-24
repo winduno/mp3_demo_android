@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <fragment
-            android:name="com.example.mp3app.Fragment.FragmentSongByLike"
+            android:name="com.example.mp3app.Fragment.FragmentHotSong"
             android:id="@+id/fragmentsongbylike"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
