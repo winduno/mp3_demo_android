@@ -22,6 +22,8 @@ import com.example.mp3app.Service.APIService;
 import com.example.mp3app.Service.DataService;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -54,7 +56,13 @@ public class FragmentPlaylist extends Fragment {
             @Override
             public void onResponse(Call<List<Playlist>> call, Response<List<Playlist>> response) {
                 playlistArrayList = (ArrayList<Playlist>) response.body();
-                playlistAdapter = new PlaylistAdapter(getActivity(), android.R.layout.simple_list_item_1, playlistArrayList);
+                Collections.shuffle(playlistArrayList);
+                int size = playlistArrayList.size()< 3? playlistArrayList.size():3;
+                ArrayList<Playlist> todayPlaylist = new ArrayList<>();
+                for (int i = 0; i < size; i++) {
+                    todayPlaylist.add(playlistArrayList.get(i));
+                }
+                playlistAdapter = new PlaylistAdapter(getActivity(), android.R.layout.simple_list_item_1, todayPlaylist);
                 listViewPlaylist.setAdapter(playlistAdapter);
                 setListViewHeightBasedOnChildren(listViewPlaylist);
             }

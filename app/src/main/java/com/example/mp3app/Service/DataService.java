@@ -3,6 +3,7 @@ package com.example.mp3app.Service;
 import com.example.mp3app.Model.Album;
 import com.example.mp3app.Model.Banner;
 import com.example.mp3app.Model.Playlist;
+import com.example.mp3app.Model.Song;
 import com.example.mp3app.Model.Type;
 
 import java.util.List;
@@ -20,5 +21,7 @@ public interface DataService {
     Call<List<Type>> getTypeData();
     @GET("album")
     Call<List<Album>> getAlbumData();
+    @GET("song/like")
+    Call<List<Song>> getSongByLikeData();
 
 }

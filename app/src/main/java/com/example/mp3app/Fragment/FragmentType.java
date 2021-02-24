@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.example.mp3app.Adapter.AlbumAdapter;
+import com.example.mp3app.Model.Album;
 import com.example.mp3app.Model.Type;
 import com.example.mp3app.R;
 import com.example.mp3app.Service.APIService;
@@ -21,6 +23,7 @@ import com.example.mp3app.Service.DataService;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -52,18 +55,25 @@ public class FragmentType extends Fragment {
             public void onResponse(Call<List<Type>> call, Response<List<Type>> response) {
                 typeArrayList = (ArrayList<Type>) response.body();
 
+                Collections.shuffle(typeArrayList);
+                int size = typeArrayList.size() < 6 ? typeArrayList.size() : 6;
+                ArrayList<Type> todayType = new ArrayList<>();
+                for (int i = 0; i < size; i++) {
+                    todayType.add(typeArrayList.get(i));
+                }
+
                 LinearLayout linearLayout = new LinearLayout(getActivity());
                 linearLayout.setOrientation(LinearLayout.HORIZONTAL);
 
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(580, 250);
-                layoutParams.setMargins(10,20,10,30);
-                for (int i = 0; i < typeArrayList.size(); i++) {
+                layoutParams.setMargins(10, 20, 10, 30);
+                for (int i = 0; i < todayType.size(); i++) {
                     CardView cardView = new CardView(getActivity());
                     cardView.setRadius(10);
                     ImageView imageView = new ImageView(getActivity());
                     imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-                    if (typeArrayList.get(i).getImage() != null){
-                        Picasso.with(getActivity()).load(typeArrayList.get(i).getImage()).into(imageView);
+                    if (todayType.get(i).getImage() != null) {
+                        Picasso.with(getActivity()).load(todayType.get(i).getImage()).into(imageView);
                     }
                     cardView.setLayoutParams(layoutParams);
                     cardView.addView(imageView);

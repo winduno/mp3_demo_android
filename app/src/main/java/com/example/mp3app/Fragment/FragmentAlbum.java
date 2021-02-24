@@ -15,11 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mp3app.Adapter.AlbumAdapter;
 import com.example.mp3app.Model.Album;
+import com.example.mp3app.Model.Playlist;
 import com.example.mp3app.R;
 import com.example.mp3app.Service.APIService;
 import com.example.mp3app.Service.DataService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -51,7 +53,13 @@ public class FragmentAlbum extends Fragment {
             @Override
             public void onResponse(Call<List<Album>> call, Response<List<Album>> response) {
                 albumArrayList = (ArrayList<Album>) response.body();
-                albumAdapter = new AlbumAdapter(getActivity(), albumArrayList);
+                Collections.shuffle(albumArrayList);
+                int size = albumArrayList.size()< 3? albumArrayList.size():3;
+                ArrayList<Album> todayAlbum = new ArrayList<>();
+                for (int i = 0; i < size; i++) {
+                    todayAlbum.add(albumArrayList.get(i));
+                }
+                albumAdapter = new AlbumAdapter(getActivity(), todayAlbum);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
                 linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
                 recyclerView.setLayoutManager(linearLayoutManager);
