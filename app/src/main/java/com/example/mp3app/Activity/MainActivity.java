@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.hide();
+//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

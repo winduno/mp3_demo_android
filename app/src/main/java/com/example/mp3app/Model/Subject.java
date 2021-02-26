@@ -1,11 +1,12 @@
 package com.example.mp3app.Model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Subject {
+public class Subject implements Serializable {
 
     @SerializedName("subjectId")
     @Expose

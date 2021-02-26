@@ -35,7 +35,7 @@ public class FragmentHotSong extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_song_by_like, container, false);
+        view = inflater.inflate(R.layout.fragment_hot_song, container, false);
         recyclerViewHotSong = view.findViewById(R.id.recyclerviewHotSong);
         GetData();
         return view;

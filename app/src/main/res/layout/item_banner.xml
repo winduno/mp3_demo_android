@@ -8,6 +8,10 @@
         android:id="@+id/imageViewBackgroundBanner"
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
+    <View
+        android:background="@drawable/custom_background_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
     <RelativeLayout
         android:id="@+id/relativeBanner"
         android:layout_alignBottom="@+id/imageViewBackgroundBanner"

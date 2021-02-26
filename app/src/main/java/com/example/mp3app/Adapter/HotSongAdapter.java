@@ -29,7 +29,7 @@ public class HotSongAdapter extends RecyclerView.Adapter<HotSongAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.hot_song_item, parent, false);
+        View view = inflater.inflate(R.layout.item_hot_song, parent, false);
 
         return new ViewHolder(view);
     }

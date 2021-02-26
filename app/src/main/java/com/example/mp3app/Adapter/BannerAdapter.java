@@ -1,15 +1,18 @@
 package com.example.mp3app.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.mp3app.Activity.ListSongActivity;
 import com.example.mp3app.Model.Banner;
 import com.example.mp3app.R;
 import com.squareup.picasso.Picasso;
@@ -39,7 +42,7 @@ public class BannerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.banner_row, null);
+        View view = inflater.inflate(R.layout.item_banner, null);
 
         ImageView imgBackgroundBanner = view.findViewById(R.id.imageViewBackgroundBanner);
         ImageView imgSongBanner = view.findViewById(R.id.imageViewBanner);
@@ -51,6 +54,15 @@ public class BannerAdapter extends PagerAdapter {
         txtTitleSongBanner.setText(bannerArrayList.get(position).getSong().getName());
         txtContent.setText(bannerArrayList.get(position).getContent());
         container.addView(view);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ListSongActivity.class);
+                intent.putExtra("banner", bannerArrayList.get(position));
+                context.startActivity(intent);
+            }
+        });
         return view;
     }
 
