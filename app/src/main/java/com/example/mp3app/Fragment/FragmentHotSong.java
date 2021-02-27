@@ -52,7 +52,6 @@ public class FragmentHotSong extends Fragment {
                 for (int i = 0; i < 5 ; i++) {
                     hotSongArrayList.add(songArrayList.get(i));
                 }
-                Log.d("Get OK", hotSongArrayList.get(0).getName());
                 hotSongAdapter = new HotSongAdapter(getActivity(), hotSongArrayList);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
                 linearLayoutManager.setOrientation(RecyclerView.VERTICAL);

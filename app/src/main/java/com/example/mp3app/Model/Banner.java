@@ -9,7 +9,7 @@ public class Banner implements Serializable {
 
     @SerializedName("bannerId")
     @Expose
-    private Integer bannerId;
+    private Long bannerId;
     @SerializedName("image")
     @Expose
     private String image;
@@ -20,11 +20,11 @@ public class Banner implements Serializable {
     @Expose
     private Song song;
 
-    public Integer getBannerId() {
+    public Long getBannerId() {
         return bannerId;
     }
 
-    public void setBannerId(Integer bannerId) {
+    public void setBannerId(Long bannerId) {
         this.bannerId = bannerId;
     }
 
