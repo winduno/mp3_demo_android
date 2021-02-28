@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Type implements Serializable {
 
@@ -16,6 +17,9 @@ public class Type implements Serializable {
     @SerializedName("image")
     @Expose
     private String image;
+    @SerializedName("song")
+    @Expose
+    private List<Song> song = null;
 
     public Integer getTypeId() {
         return typeId;
@@ -39,6 +43,14 @@ public class Type implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public List<Song> getSong() {
+        return song;
+    }
+
+    public void setSong(List<Song> song) {
+        this.song = song;
     }
 
 }

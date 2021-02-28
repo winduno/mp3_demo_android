@@ -3,6 +3,7 @@ package com.example.mp3app.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.mp3app.Adapter.ListSongAdapter;
 import com.example.mp3app.Model.Banner;
 import com.example.mp3app.Model.Song;
 import com.example.mp3app.R;
@@ -36,7 +38,6 @@ import retrofit2.Response;
 
 public class ListSongActivity extends AppCompatActivity {
 
-
     Banner banner;
     CoordinatorLayout coordinatorLayout;
     CollapsingToolbarLayout collapsingToolbarLayout;
@@ -45,6 +46,7 @@ public class ListSongActivity extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
     ImageView imgListSong;
     ArrayList<Song> songArrayList = new ArrayList<>();
+    ListSongAdapter listSongAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +87,9 @@ public class ListSongActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Song> call, Response<Song> response) {
                 songArrayList.add(response.body());
+                listSongAdapter = new ListSongAdapter(ListSongActivity.this,songArrayList);
+                recyclerViewSongList.setLayoutManager(new LinearLayoutManager(ListSongActivity.this));
+                recyclerViewSongList.setAdapter(listSongAdapter);
             }
 
             @Override

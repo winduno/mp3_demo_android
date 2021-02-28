@@ -22,12 +22,9 @@ public class Song implements Serializable {
     @SerializedName("link")
     @Expose
     private String link;
-    @SerializedName("album")
+    @SerializedName("likes")
     @Expose
-    private Album album;
-    @SerializedName("types")
-    @Expose
-    private Type type;
+    private Integer likes;
 
     public Integer getId() {
         return id;
@@ -69,20 +66,12 @@ public class Song implements Serializable {
         this.link = link;
     }
 
-    public Album getAlbum() {
-        return album;
+    public Integer getLikes() {
+        return likes;
     }
 
-    public void setAlbum(Album album) {
-        this.album = album;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
+    public void setLikes(Integer likes) {
+        this.likes = likes;
     }
 
 }

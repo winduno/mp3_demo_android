@@ -19,7 +19,7 @@ public class Playlist implements Serializable {
     private String backGround;
     @SerializedName("icon")
     @Expose
-    private String icon;
+    private Object icon;
     @SerializedName("songs")
     @Expose
     private List<Song> songs = null;
@@ -48,11 +48,11 @@ public class Playlist implements Serializable {
         this.backGround = backGround;
     }
 
-    public String getIcon() {
+    public Object getIcon() {
         return icon;
     }
 
-    public void setIcon(String icon) {
+    public void setIcon(Object icon) {
         this.icon = icon;
     }
 
